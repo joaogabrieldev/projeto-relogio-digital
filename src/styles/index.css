@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "Clock";
+  src: url(../fonts/DS-DIGIT.TTF);
+}
+
+* {
+  user-select: none;
+}
+
+body {
+  background-color: #232323;
+}
+
+header h1 {
+  width: max-content;
+  margin: auto;
+  position: relative;
+  top: 25px;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+
+#title::after {
+  content: "";
+  position: absolute;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  width: 100%;
+  height: 2px;
+  top: 48px;
+  left: 0;
+  transform: scaleX(0) ;
+  transition: transform 0.2s ease-out;
+}
+
+#title:hover::after {
+    transform: scaleX(1);
+}
+
+span {
+  color: white;
+}
+
+.relogio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  font-family: "Clock";
+  font-size: 80px;
+
+  margin-top: 140px;
+  gap: 50px;
+}
+
+.bloco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 95px;
+  width: 150px;
+  height: 150px;
+
+  background: rgba(255, 255, 255, 0.27);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  color: white;
+}

@@ -1,78 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto - Relogio Digital</title>
-    <style>
-        @font-face {
-            font-family: "Clock";
-            src: url(src/fonts/DS-DIGIT.TTF);
-        }
-
-        header h1 {
-            text-align: center;
-        }
-
-        .relogio {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
-
-            font-family: "Clock";
-            font-size: 85px;
-
-            margin-top: 200px;
-            gap: 120px;
-        }
-
-        .bloco {
-            display: flex;
-            border: 1px solid black;
-            padding: 80px;
-
-        }
-    </style>
+    <link rel="stylesheet" href="src/styles/index.css">
 </head>
-
 <body>
     <header>
-        <h1>Relogio Digital</h1>
+        <h1 id="title">RELÓGIO DIGITAL</h1>
     </header>
     <main>
         <div class="relogio">
             <div id="hora" class="bloco"></div>
+            <span> :</span>
             <div id="minuto" class="bloco"></div>
+            <span>:</span>
             <div id="segundo" class="bloco"></div>
         </div>
     </main>
-    <script>
-        const hourIndex = document.getElementById("hora")
-        const minutesIndex = document.getElementById("minuto")
-        const secondsIndex = document.getElementById("segundo");
-
-        function loadClock() {
-            const data = new Date()
-
-            const hour = data.getHours().toString().padStart(2, "0")
-
-            const minutes = data.getMinutes().toString().padStart(2, "0")
-
-            const seconds = data.getSeconds().toString().padStart(2, "0")
-
-            secondsIndex.innerHTML = seconds
-            hourIndex.innerHTML = hour
-            minutesIndex.innerHTML = minutes
-        }
-
-        loadClock()
-
-        setInterval(loadClock, 1000)
-
-
-    </script>
+    <script src="src/scripts/script.js"></script>
 </body>
-
 </html>
